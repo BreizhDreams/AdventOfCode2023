@@ -1,5 +1,5 @@
 def getInput():
-    with open("D1\inputs\day_01.txt") as file:
+    with open("D2\inputs\day_02.txt") as file:
         return file.readlines()
 
 def clearData(): 
@@ -25,16 +25,28 @@ def getQuantityArray():
             total=0
     return totalQuantityArray
 
-def getBiggestQuantity(): 
+ 
+def getSortedQuantityByElves(): 
     data = getQuantityArray()
-    highestQuantity = 0
+    quantityByElves = []
     for amount in data:
-        if amount >= highestQuantity:
-            highestQuantity = amount
-    return highestQuantity
+            quantityByElves.append(amount)
+    return sorted(quantityByElves)
 
-print(f"Biggest quantity is : {getBiggestQuantity()}")
+def getPodiumQuantity():
+    data = getSortedQuantityByElves()
+    data.reverse()
+    total = data[0] + data[1] + data[2]
+    return total
+        
+print(getPodiumQuantity())
+# print(f" Total des trois meilleurs elfes : {getTotalPodium()}")
+            
+            
+    
+    
 
-
-
+            
+    
+    
 
